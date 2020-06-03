@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// import { Switch, Route, Link, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+
+// import {Cards, Chart, CountryPicker, Navbar} from './components'
+import {Navbar,Home} from './components'
+
+
+import styles from './App.module.css' //no interference with css files
+// import {fetchData} from './api' //No need to specify full path. Immediately looks for the index.js file within the api folder.
+
+// const jwt = require('jsonwebtoken') 
+class App extends Component {
+
+  render() { 
+    return ( 
+    <div className = {styles.container}> 
+       <BrowserRouter>
+       <Navbar/> 
+       {/* <Home className = {styles.container}></Home> */}
+      </BrowserRouter>
+    </div> );
+  }
 }
-
+ 
 export default App;
